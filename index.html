@@ -111,9 +111,14 @@
 
     <script>
         //버튼 click시 modal뜨게 하기
+        const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+
         document.getElementById('createList').addEventListener('click', function () {
-            const myModal = new bootstrap.Modal(document.getElementById('myModal'));
             myModal.show();
+        });
+
+        document.getElementById('yesCreate').addEventListener('click', function () {
+            myModal.hide();
         });
 
         function getListFromJson() {
