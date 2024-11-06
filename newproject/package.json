@@ -2,7 +2,10 @@
   "name": "newproject",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/newproject", 
+  "homepage": "/newproject",
+  "engines": {
+    "node": "16.x"
+  }, 
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,7 +25,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ] 
+    ]
   },
   "browserslist": {
     "production": [
@@ -36,5 +39,4 @@
       "last 1 safari version"
     ]
   }
-
 }
