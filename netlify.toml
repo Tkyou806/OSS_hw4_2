@@ -1,3 +1,4 @@
 [build]
-  command = "cd my-app && npm run build"
-  publish = "my-app/build" 
+  base = "my-app"
+  publish = "build"
+  command = "npm run build"
