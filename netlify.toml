@@ -1,4 +1,4 @@
 [build]
-  base = "my-app"                     # React 앱이 위치한 디렉토리
-  command = "npm run build"            # 빌드 명령
-  publish = "my-app/build"             # 빌드 결과물을 `my-app/build`에 배포
+  base = "my-app"                  # React 앱이 위치한 디렉토리
+  command = "npm run build"         # 빌드 명령
+  publish = "my-app/build"          # 빌드된 React 앱 결과물이 위치한 폴더
