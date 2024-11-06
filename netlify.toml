@@ -1,3 +1,3 @@
 [build]
-  command = "cd my-app && npm install && npm run build"  # React 앱 빌드
-  publish = "my-app/build"                               # 빌드된 결과물 경로
+  command = "cd my-app && npm run build"   # React 앱 빌드
+  publish = "/"                             # 루트 디렉토리에서 배포
