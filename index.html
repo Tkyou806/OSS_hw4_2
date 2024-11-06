@@ -60,7 +60,7 @@
         If you want to delete, Input id and click "delete data"!
     </p>
 
-    <button id="updateData" class="button_ajax" onclick="updateDataToJson()" style="float:right">Update Data</button>
+    <button id="updateData" class="button_ajax" style="float:right">Update Data</button>
     <div style="float:right; margin-right:20px">
         id : <input type="text" id="find_id">
     </div>
@@ -81,7 +81,7 @@
     <br><br>
     <button id="createList" class="button_ajax" style="float:right">create List</button>
     <br>
-    <div class="modal" tabindex="-1" id="myModal">
+    <div class="modal" tabindex="-1" id="myModal1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,13 +92,34 @@
                     <p>Would you Create Data?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="noCreate">Close</button>
-                    <button type="button" class="btn btn-primary" id="yesCreate" onclick="createListToJson()">Save
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="noCreate1">Close</button>
+                    <button type="button" class="btn btn-primary" id="yesCreate1">Create data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Would you Update Data?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="noCreate2">Close</button>
+                    <button type="button" class="btn btn-primary" id="yesCreate2">Save
                         changes</button>
                 </div>
             </div>
         </div>
     </div>
+
     <br><br>
     <br>
     <br><br><br>
@@ -111,15 +132,39 @@
 
     <script>
         //버튼 click시 modal뜨게 하기
-        const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        //modal에서 save or no 선택 시 modal 사라지게 하기(save는 함수 발생하게!)
+        //modal 관련 변수 만들기
 
+        const myModal1 = new bootstrap.Modal(document.getElementById('myModal1'));
+        const myModal2 = new bootstrap.Modal(document.getElementById('myModal2'));
+
+        //추가 시!
         document.getElementById('createList').addEventListener('click', function () {
-            myModal.show();
+            myModal1.show();
         });
 
-        document.getElementById('yesCreate').addEventListener('click', function () {
-            myModal.hide();
+        document.getElementById('yesCreate1').addEventListener('click', function () {
+            myModal1.hide();
+            createListToJson();
         });
+
+        document.getElementById('noCreate1').addEventListener('click', function () {
+            myModal1.hide();
+        });
+
+        //수정 시!
+        document.getElementById('updateData').addEventListener('click', function () {
+            myModal2.show();
+        });
+        document.getElementById('yesCreate2').addEventListener('click', function () {
+            myModal2.hide();
+            updateDataToJson();
+        });
+
+        document.getElementById('noCreate2').addEventListener('click', function () {
+            myModal2.hide();
+        });
+
 
         function getListFromJson() {
             const xhr = new XMLHttpRequest();
