@@ -2,10 +2,7 @@
   "name": "newproject",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/newproject",
-  "engines": {
-    "node": "16.x"
-  }, 
+  "homepage": "https://2024oss42stoa22300806.netlify.app/newproject", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
